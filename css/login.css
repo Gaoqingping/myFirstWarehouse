@@ -1,0 +1,27 @@
+		/* css conmmon */
+		*{margin: 0px;padding: 0px;}
+		.container-fluid{margin: 0px auto;position: relative;}
+		.container{width: 1200px;margin: 0px auto;position: relative;}
+		.l{float: left;}
+		.r{float: right;}
+		.clear::after{content: '';display: block;clear: both;}
+		a{text-decoration: none;}
+		img{display: block;}
+		/* css header */
+		#header{height: 80px;box-sizing: border-box;border-bottom: 1px #919191 solid;overflow: hidden;}
+		#header img{width: 176px;height: 42px;margin-left: 20px;margin-top: 20px;}
+		/* css main */
+		#main{height: 600px;box-sizing: border-box;overflow: hidden;}
+		#main img{margin: 110px 120px 0px 140px;}
+		#main .login{width: 424px;margin-top: 80px;}
+		#main .login .login_top{width: 100%;border-bottom: 2px #b81e20 solid;}
+		#main .login .login_top span{display: inline-block;}
+		#main .login .login_top span:nth-of-type(1){font-size: 20px;color: #a2a2a2;}
+		#main .login .login_top span:nth-of-type(2){font-size: 14px;color: #a2a2a2;}
+		#main .login .login_top span:nth-of-type(2) a{font-size: 14px;color: #df9fa1;}
+		#main .login form{width: 380px;height: 420px;margin:30px auto;}
+		#main .login form label{font-size: 20px;font-weight: bold;}
+		#main .login form label input{width: 300px;height:30px; font-size: 20px;margin-bottom:10px;border-radius: 10px;outline: none;}
+		#main .login form button{background-color: orange;color: #FFFFFF;width: 100px;height: 30px;outline: none;border-radius: 10px;}
+		#main .login form span{display: block;height: 20px;font-size: 16px;color: red;}
+		#main .login form span.toTel{font-size: 14px;}

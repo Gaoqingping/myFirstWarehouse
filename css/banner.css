@@ -1,0 +1,143 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul,
+ol,
+li {
+	list-style: none;
+}
+
+#banner {
+	width: 1200px;
+	height: 535px;
+	position: relative;
+}
+
+.clear::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+#banner ul {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+#banner ul li {
+	width:100%;
+	height:535px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	opacity: 0;
+	transition:all 2s linear;
+	cursor: pointer;
+}
+#banner ul li.show{
+	opacity: 1;
+}
+
+#banner ul li:nth-of-type(1) {
+	background: url(../images/banner/banner01.jpg);
+}
+
+#banner ul li:nth-of-type(2) {
+	background: url(../images/banner/banner02.jpg);
+}
+
+#banner ul li:nth-of-type(3) {
+	background: url(../images/banner/banner03.jpg);
+}
+
+#banner ul li:nth-of-type(4) {
+	background: url(../images/banner/banner04.jpg);
+}
+
+#banner ul li:nth-of-type(5) {
+	background: url(../images/banner/banner05.jpg);
+}
+#banner ul li:nth-of-type(6) {
+	background: url(../images/banner/banner06.jpg);
+}
+#banner ul li:nth-of-type(7) {
+	background: url(../images/banner/banner07.jpg);
+}
+#banner ul li:nth-of-type(8) {
+	background: url(../images/banner/banner08.jpg);
+}
+
+#banner .arrow {
+	width: 100%;
+	height: 70px;
+	position: absolute;
+	left: 0px;
+	top: 50%;
+	transform: translateY(-50%);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index:20;
+	visibility: hidden;
+}
+
+#banner .arrow a {
+	display: block;
+	width: 40px;
+	height: 100%;
+	color: rgba(255, 255, 255, .8);
+	font-size: 40px;
+	line-height: 70px;
+	text-align: center;
+	font-family: "bodoni mt condensed";
+}
+
+#banner .arrow_left {
+	border-radius: 0px 5px 5px 0px;
+}
+
+#banner .arrow_right {
+	border-radius: 5px 0px 0px 5px;
+}
+
+#banner .arrow a:hover {
+	background: rgba(255, 0, 0, .5);
+}
+
+#banner ol {
+	height: 30px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 10px;
+	display: flex;
+	justify-content: space-evenly;
+	z-index: 999;
+}
+
+#banner ol li {
+	width: 10px;
+	height: 10px;
+	border: 2px hotpink solid;
+	background:lightpink;
+	border-radius: 50%;
+	margin: 0px 10px;
+	cursor: pointer;
+}
+
+#banner ol li:hover {
+	background: white;
+}
+
+#banner ol li.active {
+	background: rgba(255, 0, 0, .3);
+}

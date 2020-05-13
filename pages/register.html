@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>注册凡客账号</title>
+		<link rel="stylesheet" type="text/css" href="../css/register.css"/>
+		<script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="shortcut icon" href="../favicon.ico"  type="image/x-icon"/>
+	</head>
+	<body>
+		<div id="header" class="container clear">
+			<img src="../images/logo_new.jpg" class="l" >
+			<div class="top1 r">
+				<a id="login" href="./login.html">登录</a>
+				<span>|</span>
+				<a id="a1">客服中心</a>
+			</div>
+		</div>
+		
+		<div class="container">
+			
+		<div id="center">
+			<div id="center3">
+				<span>会员注册</span>
+				<a>注册成功可获<i id="jf">1000</i>  积分 + <i id="fx">返现</i>  特权！</a>
+			</div>
+			
+			<!-- 账号 -->
+			<!--手机号文本框-->
+			<div id="input">
+				<span class="name">用户名</span>
+				<input type="text" id="phone" name="username" class="text" placeholder=" 请填写用户名" autocomplete="off"/>
+			</div>
+			<div class="prompt" id="div1" style="display: none;">
+				<img src="../images/imgs/tip.png" />
+				<span id="prompt1"></span>
+			</div>
+			
+			<!--密码文本框-->
+			<div class="input" >
+				<span class="name">密码</span>
+				<input type="password" id="password" name="userpwd1"  class="text" placeholder="字母、数字和符号" />
+				<span class="grade" id="grade1">弱</span>
+				<span class="grade" id="grade2">中</span>
+				<span class="grade" id="grade3">强</span>
+			</div>
+			<div class="prompt" id="div3" style="display: none;">
+				<img src="../images/imgs/tip.png" />
+				<span id="prompt3"></span>
+			</div>
+			<!--确认密码框-->
+			<div class="input">
+				<span class="name">确认密码</span>
+				<input type="password" id="password1" name="userpwd2" class="text" placeholder=" 再次输入密码" />
+			</div>
+			<div class="prompt" id="div4" style="display: none;">
+				<img src="../images/imgs/tip.png" />
+				<span id="prompt4"></span>
+			</div>
+			<div class="input">
+							<span class="name">验证码</span>
+							<input type="text" class="text" placeholder=" 输入右侧验证码,不区分大小写" name="vc1" />
+							<span name="vc2"></span>
+						</div>
+			<div class="prompt" id="div2" style="display: none;">
+							<img src="../images/imgs/tip.png" />
+							<span id="prompt2"></span>
+						</div>
+						
+			<label id="check"><input type="checkbox" name="agr" checked="checked"><a>同意<span>《VANCL凡客诚品网服务协议》</span></a></label><br />
+			
+			<button id="btn" type="button">立即注册</button><br />
+			<span id="next_step">注册遇到问题？</span>
+		</div>
+		</div>
+		<script type="text/javascript">
+			// 设定验证码
+			let str = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ0123456789';
+			console.log($('[name="agr"]').attr("checked"));
+			var phone=$('#phone');
+			var prompt1=$('#prompt1');
+			phone.focus(function()
+			{
+			    $('#div1').show();
+			    phone.css('borderColor','#67a1e2');
+			    prompt1.text('请输入账号');
+			});
+			phone.blur(function()
+			{
+			    phone.css('borderColor','#ddd');
+			    if(this.value=="")
+			    {
+			        prompt1.text("账号不能为空");
+			    }else{
+					 $('#div1').hide();
+				}
+			})
+			
+			
+				
+			
+			//密码验证
+			var pwd=$('#password');
+			var prompt=$('#prompt3');
+			var rag3=/^\w{8,20}$/;
+			var rag4=/^\d{8,20}$/;
+			var rag5=/^[A-z0-9]{8,10}$/;
+			var rag6=/^[A-z0-9]{10,19}$/;
+			pwd.focus(function()
+			{
+			    $('#div3').show();
+			    pwd.css('borderColor','#67a1e2');
+			    $('#div3').css('width',216);
+			    prompt.text("请设置登录密码");
+			    $('#grade1').css('backgroundColor','#F1D0B9');
+			    $('#grade2').css('backgroundColor','#F1D0B9');
+			    $('#grade3').css('backgroundColor','#F1D0B9');
+			})
+			pwd.blur(function()
+			{
+			    pwd.css('backgroundColor','#ddd');
+			    if(this.value=="")
+			    {
+			        prompt.text("请设置登录密码");
+			        $('#div3').css('width',216);
+			    }
+			    else
+			    {
+			        if(rag3.test(this.value)==true)
+			        {
+			            if(rag4.test(this.value)==true)
+			            {
+			                prompt.text("密码过于简单，有被盗风险");
+			                $('#div3').css('width',216);
+			            }
+			            if(rag4.test(this.value)==false)
+			            {
+			                $('#div3').hide();
+			            }
+			            if(rag5.test(this.value)==true)
+			            {
+			                if(rag4.test(this.value)==true)
+			                {
+			                    $('#grade1').css('backgroundColor','#ff893a');
+			                }
+			                else
+			                {
+			                    $('#grade1').css('backgroundColor','#ff893a');
+			                    $('#grade2').css('backgroundColor','#ff893a');
+			                }
+			            }
+			            if(rag6.test(this.value)==true)
+			            {
+			                if(rag4.test(this.value)==true)
+			                {
+			                    $('#grade1').css('backgroundColor','#ff893a');
+			                }
+			                else
+			                {
+			                    $('#grade1').css('backgroundColor','#ff893a');
+			                    $('#grade2').css('backgroundColor','#ff893a');
+			                    $('#grade3').css('backgroundColor','#ff893a');
+			                }
+			            }
+			        }
+			        else
+			        {
+			            prompt.text("密码需为8-20个字符,由字母、数字和符号组成。");
+			            $('#div3').css('width',300);
+			        }
+			    }
+			})
+			
+			// 确认密码验证
+			var pwds=$('#password1');
+			var prompt4=$('#prompt4');
+			pwds.focus(function()
+			{
+			    $('#div4').show();
+			    prompt4.text("请再次输入密码");
+			});
+			pwds.blur(function()
+			{
+			    if(this.value=="")
+			    {
+			        prompt4.text("确认密码不能为空");
+			    }
+			    else
+			    {
+			        if(this.value==pwd.val())
+			        {
+			           $('#div4').hide();
+			        }
+			        else
+			        {
+			            prompt4.text("您两次输入的密码不一致");
+			        }
+			    }
+			})
+			
+			if($('[name="agr"]').attr("checked")==undefined){
+							  $("#btn").attr("disabled","true");
+							  $("#btn").attr("disabled",true);
+							  $("#btn").attr("disabled","disabled");
+								  
+			}else{  
+							  $("#btn").removeAttr("disabled");
+							  $("#btn").attr("disabled",false);
+			}
+			
+			function setVc() {
+			  let newStr = '';
+			  for (let i = 1; i <= 6; i++) {
+			    let num = parseInt(Math.random() * str.length);
+			    if (newStr.indexOf(str[num]) === -1) {
+			      newStr += str[num];
+			    } else {
+			      i--;
+			    }
+			  }
+			  return newStr;
+			}
+			
+			$('[name="vc2"]').html( setVc() ).css("fontSize","20px");
+			
+			$('[name="vc2"]').click(function(){
+			  $(this).html( setVc() );
+			})
+			
+			$('[type="button"]').click(function () {
+			  
+			  
+			  let username = $('[name="username"]').val();
+			  let userpwd1 = $('[name="userpwd1"]').val();
+			  let userpwd2 = $('[name="userpwd2"]').val();
+			  
+			  
+			 
+			  
+						  
+			let uservc = $('[name="vc1"]').val();
+			if( uservc.toLowerCase() !== $('[name="vc2"]').html().toLowerCase()){
+			  $('#div2').show();
+			  $('.text').css('borderColor','#67a1e2');
+			  $('#prompt2').text('验证码不正确');
+			  return false;
+			}
+			
+			 	
+			
+			
+			  $.ajax({
+			      url:'../server/goods_res.php',
+			      type:'post',
+			      data:{userName:username,userPwd:userpwd1},
+			      dataType:'json',
+			      success:function(res){
+			        if(res == '1'){
+			          window.alert('注册成功,点击确定,跳转首页');
+			          window.location.href = '../index.html';
+			        }else if(res == '0'){
+			          window.alert('注册失败');
+			        }
+			      }
+			  })
+			
+			})
+		</script>
+	</body>
+</html>
