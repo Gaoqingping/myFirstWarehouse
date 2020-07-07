@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>注册凡客账号</title>
+		<link rel="stylesheet" type="text/css" href="../css/register.css"/>
+		<link rel="shortcut icon" href="favicon.ico"  type="image/x-icon"/>
+	</head>
+	<body>
+		<div id="header" class="container clear">
+			<img src="../images/logo_new.jpg" class="l" >
+			<div class="top1 r">
+				<a id="login" href="./login.html">登录</a>
+				<span>|</span>
+				<a id="a1">客服中心</a>
+			</div>
+		</div>
+		
+		<div class="container">
+			
+		<div id="center">
+			<div id="center3">
+				<span>会员注册</span>
+				<a>注册成功可获<i id="jf">1000</i>  积分 + <i id="fx">返现</i>  特权！</a>
+			</div>
+			
+			<!-- 账号 -->
+			<!--手机号文本框-->
+			<div id="input">
+				<span class="name">用户名</span>
+				<input type="text" id="phone" name="username" class="text" placeholder=" 请填写用户名" autocomplete="off"/>
+			</div>
+			<div class="prompt" id="div1" style="display: none;">
+				<img src="../images/imgs/tip.png" />
+				<span id="prompt1"></span>
+			</div>
+			
+			<!--密码文本框-->
+			<div class="input" >
+				<span class="name">密码</span>
+				<input type="password" id="password" name="userpwd1"  class="text" placeholder="字母、数字和符号" />
+				<span class="grade" id="grade1">弱</span>
+				<span class="grade" id="grade2">中</span>
+				<span class="grade" id="grade3">强</span>
+			</div>
+			<div class="prompt" id="div3" style="display: none;">
+				<img src="../images/imgs/tip.png" />
+				<span id="prompt3"></span>
+			</div>
+			<!--确认密码框-->
+			<div class="input">
+				<span class="name">确认密码</span>
+				<input type="password" id="password1" name="userpwd2" class="text" placeholder=" 再次输入密码" />
+			</div>
+			<div class="prompt" id="div4" style="display: none;">
+				<img src="../images/imgs/tip.png" />
+				<span id="prompt4"></span>
+			</div>
+			<div class="input">
+							<span class="name">验证码</span>
+							<input type="text" class="text" placeholder=" 输入右侧验证码,不区分大小写" name="vc1" />
+							<span name="vc2"></span>
+						</div>
+			<div class="prompt" id="div2" style="display: none;">
+							<img src="../images/imgs/tip.png" />
+							<span id="prompt2"></span>
+						</div>
+						
+			<label id="check"><input type="checkbox" name="agr" checked="checked"><a>同意<span>《VANCL凡客诚品网服务协议》</span></a></label><br />
+			
+			<button id="btn" type="button">立即注册</button><br />
+			<span id="next_step">注册遇到问题？</span>
+		</div>
+		</div>
+		
+		<script src="../lib/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/register.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
